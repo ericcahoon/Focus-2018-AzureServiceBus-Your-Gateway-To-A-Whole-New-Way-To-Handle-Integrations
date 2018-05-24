@@ -8,8 +8,8 @@ namespace Demo
 	{
 		private int _count;
 
+		/// <inheritdoc />
 		/// <summary>
-		/// 
 		/// </summary>
 		/// <param name="session"></param>
 		public void OnCloseSession(MessageSession session)
@@ -22,6 +22,7 @@ namespace Demo
 		}
 
 
+		/// <inheritdoc />
 		/// <summary>
 		/// 
 		/// </summary>
@@ -37,6 +38,7 @@ namespace Demo
 		}
 
 
+		/// <inheritdoc />
 		/// <summary>
 		/// 
 		/// </summary>

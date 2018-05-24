@@ -5,11 +5,12 @@ using Microsoft.ServiceBus.Messaging;
 
 namespace Demo
 {
-	class Program
+	internal class Program
 	{
+		// ReSharper disable once ConvertToConstant.Local
 		private static readonly string AzureConnectionString = "";
 
-		static void Main()
+		private static void Main()
 		{
 			if (string.IsNullOrWhiteSpace(AzureConnectionString)) { throw new NullReferenceException("The Azure Connection String must be defined"); }
 
@@ -121,6 +122,7 @@ namespace Demo
 				DefaultMessageTimeToLive = TimeSpan.FromMinutes(5)
 			};
 
+		
 			namespaceManager.CreateQueue(qd);
 		}
 	}

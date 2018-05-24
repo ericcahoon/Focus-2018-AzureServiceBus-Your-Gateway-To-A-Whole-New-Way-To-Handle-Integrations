@@ -5,7 +5,7 @@ using Microsoft.Xrm.Sdk;
 
 namespace Demo
 {
-	class Utility
+	internal class Utility
 	{
 		/// <summary>
 		/// Extracts the CRM ExecutionContext from the provided BrokeredMessage
@@ -18,7 +18,17 @@ namespace Demo
 			var context = message.GetBody<RemoteExecutionContext>(
 				new DataContractJsonSerializer(typeof(RemoteExecutionContext)));
 
-			Console.WriteLine(context);
+			Console.WriteLine($@"
+
+*** New Message Received @ {DateTime.Now} ***
+
+Id: {message.MessageId}
+
+Context:  {context.SerializeToJson()}
+
+*** END OF NEW MESSAGE ***
+
+");
 		}
 	}
 }
